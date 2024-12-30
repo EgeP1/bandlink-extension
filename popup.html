@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BandLink AI Training Node</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <img src="icons/icon48.png" alt="BandLink" />
+        <span>BandLink</span>
+      </div>
+      <button id="dashboardBtn" class="dashboard-btn">Open Dashboard</button>
+    </div>
+
+    <div id="wasmWarning" class="warning-banner">
+      <div class="warning-content">
+        <span>⚠️ Enable WebAssembly</span>
+        <div class="warning-buttons">
+          <button id="jspiBtn">JSPI</button>
+          <button id="featuresBtn">Features</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="status-section">
+      <div class="status-header">
+        <span class="status-label">Status</span>
+        <div class="status-badge" id="statusBadge">Inactive</div>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="nodeToggle">
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-icon">📊</div>
+        <div class="metric-info">
+          <span class="metric-label">CPU Usage</span>
+          <div class="metric-value" id="cpuUsage">0%</div>
+        </div>
+        <div class="progress-bar">
+          <div class="progress" id="cpuBar"></div>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-icon">💾</div>
+        <div class="metric-info">
+          <span class="metric-label">Memory</span>
+          <div class="metric-value" id="memoryUsage">0%</div>
+        </div>
+        <div class="progress-bar">
+          <div class="progress" id="memoryBar"></div>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-icon">🎯</div>
+        <div class="metric-info">
+          <span class="metric-label">Tasks</span>
+          <div class="metric-value" id="tasksCompleted">0</div>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-icon">⭐</div>
+        <div class="metric-info">
+          <span class="metric-label">Points</span>
+          <div class="metric-value" id="pointsEarned">0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-section">
+      <span class="time-label">Time Active</span>
+      <span class="time-value" id="timeActive">0m</span>
+    </div>
+  </div>
+  <script src="utils/metrics.js"></script>
+  <script src="utils/tasks.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
